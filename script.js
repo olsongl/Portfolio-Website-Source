@@ -31,7 +31,9 @@
 
     function openResume(triggerEl) {
       lastFocus = triggerEl || document.activeElement;
-      if (pdfFrame && !pdfFrame.src) pdfFrame.src = pdfUrl;
+      // Always point the iframe at the PDF — assigning "" on close resolves to the
+      // page URL, so a guarded set would skip on subsequent opens.
+      if (pdfFrame) pdfFrame.src = pdfUrl;
       resumeModal.setAttribute("aria-hidden", "false");
       document.body.classList.add("modal-open");
       const closeBtn = resumeModal.querySelector(".modal__close");
@@ -41,7 +43,7 @@
     function closeResume() {
       resumeModal.setAttribute("aria-hidden", "true");
       document.body.classList.remove("modal-open");
-      if (pdfFrame) pdfFrame.src = "";
+      if (pdfFrame) pdfFrame.src = "about:blank";
       if (lastFocus && typeof lastFocus.focus === "function") lastFocus.focus();
     }
 
