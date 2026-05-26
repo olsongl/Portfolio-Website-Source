@@ -8,6 +8,9 @@
       name="description"
       content="Portfolio website for Gavin Olson — software engineering projects, skills, and about."
     />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="styles.css" />
     <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
 
@@ -29,29 +32,26 @@
         <a class="logo" href="#">GO</a>
 
         <button class="nav__toggle" id="navToggle" aria-expanded="false" aria-controls="navMenu">
-          ☰
+          <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+            <line x1="4" y1="7" x2="20" y2="7" />
+            <line x1="4" y1="12" x2="20" y2="12" />
+            <line x1="4" y1="17" x2="20" y2="17" />
+          </svg>
           <span class="sr-only">Toggle navigation</span>
         </button>
 
         <div class="nav__menu" id="navMenu">
           <a href="#projects">Projects</a>
-          <a href="#skills">Skills</a>
           <a href="#about">About</a>
         </div>
       </nav>
     </header>
 
     <main id="main">
-      <!-- TOP ANIMATED DISPLAY -->
-      <section class="topfx" aria-hidden="true">
-        <canvas id="orbCanvas"></canvas>
-        <div class="topfx__fade"></div>
-      </section>
-
       <!-- HERO -->
       <section class="hero container">
         <div class="hero__text">
-          <p class="kicker">Software Engineer  • New Grad</p>
+          <p class="kicker">Software Engineer · New Grad</p>
           <h1>Hi, I’m <span class="accent">Gavin</span>. I build reliable software and performance-focused systems.</h1>
           <p class="subhead">
             I like solving tricky problems, contributing to real codebases, and making things run faster.
@@ -60,22 +60,35 @@
 
           <div class="hero__actions">
             <a class="btn" href="#projects">View Projects</a>
-            <a class="btn btn--ghost" href="assets/GavinLOlson_Resume_2026.pdf" target="_blank" rel="noreferrer">View Resume</a>
+            <a class="btn btn--ghost" href="assets/GavinLOlson_Resume_2026.pdf" target="_blank" rel="noreferrer" data-open="resume">View Resume</a>
           </div>
 
           <div class="hero__links">
-            <a href="https://github.com/olsongl" target="_blank" rel="noreferrer">GitHub</a>
-            <a href="https://www.linkedin.com/in/gavinlolson" target="_blank" rel="noreferrer">LinkedIn</a>
-            <a href="assets/GavinLOlson_Resume_2026.pdf" target="_blank" rel="noreferrer">Resume (PDF)</a>
+            <a class="icon-btn" href="https://github.com/olsongl" target="_blank" rel="noreferrer" aria-label="GitHub">
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true">
+                <path d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91.57.11.78-.25.78-.55v-2.12c-3.2.69-3.88-1.36-3.88-1.36-.52-1.33-1.28-1.68-1.28-1.68-1.05-.72.08-.71.08-.71 1.16.08 1.77 1.19 1.77 1.19 1.03 1.77 2.7 1.26 3.36.96.1-.75.4-1.26.73-1.55-2.55-.29-5.24-1.28-5.24-5.7 0-1.26.45-2.29 1.19-3.1-.12-.29-.51-1.47.11-3.06 0 0 .96-.31 3.15 1.18a10.94 10.94 0 0 1 5.74 0c2.19-1.49 3.15-1.18 3.15-1.18.62 1.59.23 2.77.11 3.06.74.81 1.19 1.84 1.19 3.1 0 4.43-2.69 5.41-5.25 5.69.41.36.78 1.06.78 2.13v3.16c0 .31.21.67.79.55C20.21 21.39 23.5 17.08 23.5 12 23.5 5.65 18.35.5 12 .5z" />
+              </svg>
+            </a>
+            <a class="icon-btn" href="https://www.linkedin.com/in/gavinlolson" target="_blank" rel="noreferrer" aria-label="LinkedIn">
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true">
+                <path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.13 1.45-2.13 2.94v5.67H9.36V9h3.41v1.56h.05c.47-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.07 2.07 0 1 1 0-4.13 2.07 2.07 0 0 1 0 4.13zm1.78 13.02H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .78 0 1.74v20.51C0 23.22.79 24 1.77 24h20.45c.98 0 1.78-.78 1.78-1.75V1.74C24 .78 23.2 0 22.22 0z" />
+              </svg>
+            </a>
+            <a class="icon-btn" href="assets/GavinLOlson_Resume_2026.pdf" target="_blank" rel="noreferrer" aria-label="Resume (PDF)" data-open="resume">
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+                <path d="M14 2v6h6" />
+                <path d="M9 13h6M9 17h4" />
+              </svg>
+            </a>
           </div>
         </div>
 
         <div class="hero__card">
           <div class="avatar" aria-hidden="true"></div>
           <ul class="quickfacts">
-            <li><strong>Location:</strong> DC Area (Open to relocation)</li>
-            <li><strong>Focus:</strong> Parallel + distributed, performance</li>
-            <li><strong>Currently:</strong> Shipping projects + applying</li>
+            <li><strong>Location</strong> DC Area (Open to relocation)</li>
+            <li><strong>Currently</strong> Shipping projects + applying</li>
           </ul>
         </div>
       </section>
@@ -83,11 +96,19 @@
       <!-- PROJECTS -->
       <section class="section" id="projects">
         <div class="section__head container">
-          <h2>Projects</h2>
-          <p>Here are a few of my projects. I've been using AI to enhance my development workflow.</p>
-          <div class="carousel__nav">
-            <button class="carousel__btn" id="carouselPrev" aria-label="Previous project">&#8592;</button>
-            <button class="carousel__btn" id="carouselNext" aria-label="Next project">&#8594;</button>
+          <div class="section__head-row">
+            <div>
+              <h2>Projects</h2>
+              <p>A selection of recent work. The full list lives on <a class="inline-link" href="https://github.com/olsongl" target="_blank" rel="noreferrer">GitHub</a>.</p>
+            </div>
+            <div class="carousel__nav">
+              <button class="carousel__btn" id="carouselPrev" aria-label="Previous project">
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 18l-6-6 6-6" /></svg>
+              </button>
+              <button class="carousel__btn" id="carouselNext" aria-label="Next project">
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18l6-6-6-6" /></svg>
+              </button>
+            </div>
           </div>
         </div>
 
@@ -95,7 +116,7 @@
           <article class="card">
             <div class="card__top">
               <h3>QuEST Contributions</h3>
-              <p class="muted">C • OpenMP • MPI • CUDA</p>
+              <p class="muted">C · OpenMP · MPI · CUDA</p>
             </div>
             <p>
               Contributed to parallel initialization and validation logic in the QuEST
@@ -108,14 +129,14 @@
               <li>Received direct feedback and acknowledgment from the lead maintainer</li>
             </ul>
             <div class="card__actions">
-              <a class="btn btn--small" href="https://github.com/QuEST-Kit/QuEST" target="_blank" rel="noreferrer">GitHub Repo</a>
+              <a class="btn btn--small btn--ghost" href="https://github.com/QuEST-Kit/QuEST" target="_blank" rel="noreferrer">View source</a>
             </div>
           </article>
 
           <article class="card">
             <div class="card__top">
               <h3>Large-Scale Playwright Scraper</h3>
-              <p class="muted">Python • Playwright • Pandas • PostgreSQL</p>
+              <p class="muted">Python · Playwright · Pandas · PostgreSQL</p>
             </div>
             <p>
               Built a headless browser scraping pipeline for a private client to aggregate and analyze structured data
@@ -127,14 +148,14 @@
               <li>Automated nightly runs with delta detection to capture only new or changed entries</li>
             </ul>
             <div class="card__actions">
-              <span class="btn btn--small btn--ghost" aria-disabled="true">Client Declined Open Source</span>
+              <span class="badge" aria-disabled="true">Client declined open source</span>
             </div>
           </article>
 
           <article class="card">
             <div class="card__top">
               <h3>Private Doc Brain</h3>
-              <p class="muted">Python • Ollama • ChromaDB • BM25</p>
+              <p class="muted">Python · Ollama · ChromaDB · BM25</p>
             </div>
             <p>
               A fully local, privacy-first document Q&A system. Ask natural language questions across PDFs, Word docs,
@@ -146,101 +167,306 @@
               <li>SHA256-based incremental indexing; only new or modified files are re-embedded on subsequent runs</li>
             </ul>
             <div class="card__actions">
-              <a class="btn btn--small" href="https://github.com/olsongl/Doc-Brain" target="_blank" rel="noreferrer">GitHub Repo</a>
+              <a class="btn btn--small btn--ghost" href="https://github.com/olsongl/Doc-Brain" target="_blank" rel="noreferrer">View source</a>
             </div>
           </article>
 
           <article class="card">
             <div class="card__top">
-              <h3>AI Job Auto-Applicator</h3>
-              <p class="muted">Python • Selenium • AI • Browser Automation</p>
+              <h3>SQL Analyst Agent</h3>
+              <p class="muted">Python · Claude API · SQLite · sqlglot</p>
             </div>
             <p>
-              An intelligent job application bot that automates the repetitive parts of applying at scale. Users pre-fill
-              a profile once; the system handles the rest — navigating job boards, filling forms, and using AI to adapt
-              answers to each posting's specific questions.
+              A multi-agent text-to-SQL system that plans, writes, validates, executes, and explains queries
+              from a plain-English question. Six specialized agents — schema explorer, planner, writer,
+              validator, executor, summarizer — take turns with a self-correcting retry loop and real safety
+              guardrails.
             </p>
             <ul class="bullets">
-              <li>Selenium-driven form automation with hardcoded site-specific logic for major job platforms</li>
-              <li>AI-generated responses for free-text fields tailored to each job description</li>
-              <li>User-defined profile keeps humans in control of core info while the bot handles execution</li>
+              <li>Six-agent loop hand-written in ~1,900 lines of typed Python — no LangChain, no LangGraph</li>
+              <li>Validator-driven self-correction: writer sees the prior SQL + error on retry; planner stays fixed</li>
+              <li>Read-only execution under wall-clock timeout + row cap; safety policy enforced via <code>sqlglot</code></li>
             </ul>
             <div class="card__actions">
-              <span class="btn btn--small btn--ghost" aria-disabled="true">Open Source Soon</span>
+              <a class="btn btn--small btn--ghost" href="https://github.com/olsongl/sql-agent" target="_blank" rel="noreferrer">View source</a>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="card__top">
+              <h3>Paper RAG</h3>
+              <p class="muted">Python · Chroma · BGE · Cross-encoder · LLM-as-judge</p>
+            </div>
+            <p>
+              A production-style RAG system for research papers with hybrid retrieval, a cross-encoder
+              reranker, citation-grounded generation, and an automated LLM-as-judge eval harness that
+              actually measures whether the answers are any good.
+            </p>
+            <ul class="bullets">
+              <li>BM25 + dense retrieval fused via Reciprocal Rank Fusion, then cross-encoder reranking (MiniLM)</li>
+              <li>Citation-grounded prompt with an explicit refusal path when the top retrieval score is below threshold</li>
+              <li>Built-in eval harness scoring faithfulness, answer relevance, context precision, and citation accuracy</li>
+            </ul>
+            <div class="card__actions">
+              <a class="btn btn--small btn--ghost" href="https://github.com/olsongl/paper-rag-demo" target="_blank" rel="noreferrer">View source</a>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="card__top">
+              <h3>News Intelligence Pipeline</h3>
+              <p class="muted">Python · DuckDB · HDBSCAN · Claude · Streamlit</p>
+            </div>
+            <p>
+              An end-to-end news intelligence pipeline. Ingests articles from RSS, embeds and clusters them
+              into topics with HDBSCAN, generates per-cluster summaries and per-article sentiment with
+              Claude, detects accelerating topics, and surfaces everything on a 4-panel Streamlit dashboard.
+            </p>
+            <ul class="bullets">
+              <li>Idempotent stages — ingest dedupes on URL; embedding and sentiment skip already-processed rows</li>
+              <li>HDBSCAN clusters headlines into topics; SQL + pandas computes today-vs-trailing-7-day acceleration</li>
+              <li>Runs end-to-end on a single DuckDB file with no internet or API key required (sample data shipped)</li>
+            </ul>
+            <div class="card__actions">
+              <a class="btn btn--small btn--ghost" href="https://github.com/olsongl/news-intel-pipeline" target="_blank" rel="noreferrer">View source</a>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="card__top">
+              <h3>AI Research Updater</h3>
+              <p class="muted">Python · Claude Code · Subagents · Markdown</p>
+            </div>
+            <p>
+              A weekly AI news digest produced by spawning parallel Claude Code research subagents.
+              One slash command kicks off the run, and the output lands as a 1–2 page blog-style
+              "what's now possible" report.
+            </p>
+            <ul class="bullets">
+              <li>Fans out 4 parallel research subagents across Reddit, X/Twitter, Anthropic, and other major AI companies</li>
+              <li>Synthesizes findings into a structured markdown digest saved per-week under <code>reports/</code></li>
+              <li>Maintains a <code>history.md</code> log so each run automatically skips topics already covered</li>
+            </ul>
+            <div class="card__actions">
+              <a class="btn btn--small btn--ghost" href="https://github.com/olsongl/AI-research-tool" target="_blank" rel="noreferrer">View source</a>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="card__top">
+              <h3>Apartment Scraper Suite</h3>
+              <p class="muted">Python · BeautifulSoup · OpenPyXL · Sightmap API</p>
+            </div>
+            <p>
+              A multi-source residential rental scraper that runs daily across 8+ apartment platforms
+              (Equity, RentCafe, Bozzuto, Sightmap, RealPage, Spherexx) and writes a deduplicated,
+              unit-level Excel report.
+            </p>
+            <ul class="bullets">
+              <li>Property-specific parsers handle distinct DOM layouts and embedded JSON endpoints per platform</li>
+              <li>End-to-end audited against live pages — recovered 50+ rows per day previously lost to layout drift</li>
+              <li>Daily delta xlsx output captures per-unit price, size, beds, baths, and availability date</li>
+            </ul>
+            <div class="card__actions">
+              <a class="btn btn--small btn--ghost" href="https://github.com/olsongl/apartment-auto" target="_blank" rel="noreferrer">View source</a>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="card__top">
+              <h3>Resume Match Analyzer</h3>
+              <p class="muted">Python · FastAPI · Claude API · Pydantic</p>
+            </div>
+            <p>
+              A web app that scores a resume against a job description and returns structured,
+              actionable feedback — match score, missing skills, concrete resume edits, and likely
+              interview questions.
+            </p>
+            <ul class="bullets">
+              <li>Structured output via Claude API + Pydantic schemas so responses are always parseable</li>
+              <li>PDF resume upload and parsing with <code>pypdf</code>, plus a plain-text fallback</li>
+              <li>Concrete rewrite suggestions ("change X to Y") instead of generic advice like "add more detail"</li>
+            </ul>
+            <div class="card__actions">
+              <a class="btn btn--small btn--ghost" href="https://github.com/olsongl/Job-Match" target="_blank" rel="noreferrer">View source</a>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="card__top">
+              <h3>Darts Scoring App</h3>
+              <p class="muted">Python · HTML · CSS · JavaScript</p>
+            </div>
+            <p>
+              A single-file 301/501 darts scoring app — server, game logic, and UI all live in one
+              ~700-line Python file with zero external dependencies beyond the standard library.
+            </p>
+            <ul class="bullets">
+              <li>Browser frontend served from a Python stdlib HTTP server — no frameworks, no build step</li>
+              <li>Server-side game state synced to the client via a small REST API</li>
+              <li>Persistent player leaderboard saved to JSON, survives server restarts</li>
+            </ul>
+            <div class="card__actions">
+              <a class="btn btn--small btn--ghost" href="https://github.com/olsongl/darts" target="_blank" rel="noreferrer">View source</a>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="card__top">
+              <h3>This Portfolio Website</h3>
+              <p class="muted">HTML · CSS · JavaScript</p>
+            </div>
+            <p>
+              The site you're on. Hand-rolled with no frameworks or build step — just HTML, CSS,
+              and vanilla JS, hosted on S3.
+            </p>
+            <ul class="bullets">
+              <li>Drag-to-swipe project carousel with pointer events, seamless looping, and keyboard control</li>
+              <li>Responsive layout, semantic HTML, skip-to-content link, and proper ARIA for the nav toggle</li>
+              <li>Typography and palette tuned by hand — no UI kit, no Tailwind, no CSS framework</li>
+            </ul>
+            <div class="card__actions">
+              <a class="btn btn--small btn--ghost" href="https://github.com/olsongl/Portfolio-Website-Source" target="_blank" rel="noreferrer">View source</a>
             </div>
           </article>
         </div>
       </section>
 
-      <!-- SKILLS -->
-      <section class="section container" id="skills">
-        <div class="section__head">
-          <h2>Skills</h2>
-          <p>Tools and technologies I've used and/or are comfortable working with.</p>
-        </div>
-
-        <div class="chips">
-          <span class="chip">C / C++</span>
-          <span class="chip">Python</span>
-          <span class="chip">Ruby</span>
-          <span class="chip">JavaScript</span>
-          <span class="chip">MySQL</span>
-          <span class="chip">OpenMP</span>
-          <span class="chip">MPI</span>
-          <span class="chip">CUDA</span>
-          <span class="chip">Kubernetes</span>
-          <span class="chip">Dask</span>
-          <span class="chip">Django</span>
-          <span class="chip">Linux</span>
-          <span class="chip">Git</span>
-          <span class="chip">LLM Integration</span>
-          <span class="chip">Prompt Engineering</span>
-          <span class="chip">Ollama</span>
-          <span class="chip">ChromaDB</span>
-          <span class="chip">RAG</span>
-          <span class="chip">Vector Search</span>
-          <span class="chip">Playwright</span>
-          <span class="chip">Selenium</span>
-          <span class="chip">AI Workflow Automation</span>
-          <span class="chip">Claude API</span>
-          <span class="chip">OpenAI API</span>
-          <span class="chip">LangChain</span>
-          <span class="chip">Agentic Pipelines</span>
-        </div>
-      </section>
-
-      <!-- ABOUT -->
+      <!-- ABOUT + SKILLS -->
       <section class="section container" id="about">
         <div class="section__head">
           <h2>About</h2>
         </div>
 
-        <div class="about">
-          <p>
-            I’m a software engineer with a strong analytical foundation. I enjoy working on performance-heavy problems,
-            parallel/distributed systems, and clean implementations that hold up under real constraints. I learn fast,
-            iterate based on feedback, and like shipping work that’s measurable.
-          </p>
+        <div class="about-grid">
+          <div class="about">
+            <p>
+              I’m a software engineer with a strong analytical foundation. I enjoy working on performance-heavy problems,
+              parallel/distributed systems, and clean implementations that hold up under real constraints. I learn fast,
+              iterate based on feedback, and like shipping work that’s measurable.
+            </p>
 
-          <div class="callout">
-            <h3>What I’m looking for</h3>
-            <p class="muted">
-              Entry-level / new grad roles in software engineering, backend, HPC, or performance-focused engineering.
-            </p>
-            <p class="muted" style="margin-top: 10px;">
-              Also interested in AI integration roles — operations automation, internal tooling powered by LLMs,
-              workflow automation, and anything involving wiring AI into real systems to cut manual work and move faster.
-            </p>
+            <div class="callout">
+              <h3>What I’m looking for</h3>
+              <p class="muted">
+                Entry-level / new grad roles in software engineering, backend, HPC, or performance-focused engineering.
+              </p>
+              <p class="muted">
+                Also interested in AI integration roles — operations automation, internal tooling powered by LLMs,
+                workflow automation, and anything involving wiring AI into real systems to cut manual work and move faster.
+              </p>
+              <p class="muted">
+                Also interested in data-focused roles — data engineering, analytics engineering, data analyst,
+                or ETL/pipeline work where I can build the plumbing that turns messy sources into clean,
+                queryable data.
+              </p>
+            </div>
           </div>
+
+          <aside class="skills" aria-label="Skills and tools">
+            <div class="skill-group">
+              <h4>Languages</h4>
+              <div class="chips">
+                <span class="chip">C / C++</span>
+                <span class="chip">Python</span>
+                <span class="chip">Ruby</span>
+                <span class="chip">JavaScript</span>
+                <span class="chip">SQL</span>
+              </div>
+            </div>
+
+            <div class="skill-group">
+              <h4>Data &amp; Visualization</h4>
+              <div class="chips">
+                <span class="chip">pandas</span>
+                <span class="chip">Polars</span>
+                <span class="chip">scikit-learn</span>
+                <span class="chip">BigQuery</span>
+                <span class="chip">Tableau</span>
+              </div>
+            </div>
+
+            <div class="skill-group">
+              <h4>Parallel &amp; Performance</h4>
+              <div class="chips">
+                <span class="chip">OpenMP</span>
+                <span class="chip">MPI</span>
+                <span class="chip">CUDA</span>
+                <span class="chip">Dask</span>
+                <span class="chip">Kubernetes</span>
+              </div>
+            </div>
+
+            <div class="skill-group">
+              <h4>AI &amp; LLMs</h4>
+              <div class="chips">
+                <span class="chip">Claude API</span>
+                <span class="chip">OpenAI API</span>
+                <span class="chip">Ollama</span>
+                <span class="chip">ChromaDB</span>
+                <span class="chip">RAG</span>
+                <span class="chip">Vector Search</span>
+                <span class="chip">LangChain</span>
+                <span class="chip">LLM Integration</span>
+                <span class="chip">Prompt Engineering</span>
+                <span class="chip">Agentic Pipelines</span>
+                <span class="chip">AI Workflow Automation</span>
+              </div>
+            </div>
+
+            <div class="skill-group">
+              <h4>Tools &amp; Infra</h4>
+              <div class="chips">
+                <span class="chip">Linux</span>
+                <span class="chip">Git</span>
+                <span class="chip">Django</span>
+                <span class="chip">MySQL</span>
+                <span class="chip">Playwright</span>
+                <span class="chip">Selenium</span>
+              </div>
+            </div>
+          </aside>
         </div>
       </section>
-
-      
     </main>
 
     <footer class="footer container">
-    <p class="muted small">© <span id="year"></span> Gavin Olson. Built with HTML/CSS/JS.</p>
+      <p class="muted small">© <span id="year"></span> Gavin Olson · DC Area</p>
     </footer>
+
+    <!-- Resume modal -->
+    <div class="modal" id="resumeModal" role="dialog" aria-modal="true" aria-labelledby="resumeModalTitle" aria-hidden="true">
+      <div class="modal__backdrop" data-modal-close></div>
+      <div class="modal__panel" role="document">
+        <div class="modal__header">
+          <h3 class="modal__title" id="resumeModalTitle">Resume — Gavin Olson</h3>
+          <div class="modal__actions">
+            <a class="btn btn--small btn--ghost" href="assets/GavinLOlson_Resume_2026.pdf" download="GavinLOlson_Resume_2026.pdf">
+              <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+                <polyline points="7 10 12 15 17 10" />
+                <line x1="12" y1="15" x2="12" y2="3" />
+              </svg>
+              Download
+            </a>
+            <button type="button" class="modal__close" data-modal-close aria-label="Close resume">
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <line x1="18" y1="6" x2="6" y2="18" />
+                <line x1="6" y1="6" x2="18" y2="18" />
+              </svg>
+            </button>
+          </div>
+        </div>
+        <div class="modal__body">
+          <iframe class="modal__pdf" title="Resume PDF" loading="lazy"></iframe>
+          <noscript>
+            <p class="modal__fallback">
+              JavaScript is disabled — <a href="assets/GavinLOlson_Resume_2026.pdf" target="_blank" rel="noreferrer">open the PDF in a new tab</a>.
+            </p>
+          </noscript>
+        </div>
+      </div>
+    </div>
 
     <script src="script.js"></script>
   </body>
