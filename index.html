@@ -1,0 +1,247 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gavin Olson | Software Engineer</title>
+    <meta
+      name="description"
+      content="Portfolio website for Gavin Olson — software engineering projects, skills, and about."
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+
+    <!-- Open Graph / social preview -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Gavin Olson | Software Engineer" />
+    <meta property="og:description" content="Portfolio of Gavin Olson — parallel systems, performance engineering, and AI tooling." />
+    <meta property="og:image" content="assets/Headshot.jpg" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Gavin Olson | Software Engineer" />
+    <meta name="twitter:description" content="Portfolio of Gavin Olson — parallel systems, performance engineering, and AI tooling." />
+  </head>
+
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <header class="header">
+      <nav class="nav container">
+        <a class="logo" href="#">GO</a>
+
+        <button class="nav__toggle" id="navToggle" aria-expanded="false" aria-controls="navMenu">
+          ☰
+          <span class="sr-only">Toggle navigation</span>
+        </button>
+
+        <div class="nav__menu" id="navMenu">
+          <a href="#projects">Projects</a>
+          <a href="#skills">Skills</a>
+          <a href="#about">About</a>
+        </div>
+      </nav>
+    </header>
+
+    <main id="main">
+      <!-- TOP ANIMATED DISPLAY -->
+      <section class="topfx" aria-hidden="true">
+        <canvas id="orbCanvas"></canvas>
+        <div class="topfx__fade"></div>
+      </section>
+
+      <!-- HERO -->
+      <section class="hero container">
+        <div class="hero__text">
+          <p class="kicker">Software Engineer  • New Grad</p>
+          <h1>Hi, I’m <span class="accent">Gavin</span>. I build reliable software and performance-focused systems.</h1>
+          <p class="subhead">
+            I like solving tricky problems, contributing to real codebases, and making things run faster.
+            Here’s my work and how to reach me.
+          </p>
+
+          <div class="hero__actions">
+            <a class="btn" href="#projects">View Projects</a>
+            <a class="btn btn--ghost" href="assets/GavinLOlson_Resume_2026.pdf" target="_blank" rel="noreferrer">View Resume</a>
+          </div>
+
+          <div class="hero__links">
+            <a href="https://github.com/olsongl" target="_blank" rel="noreferrer">GitHub</a>
+            <a href="https://www.linkedin.com/in/gavinlolson" target="_blank" rel="noreferrer">LinkedIn</a>
+            <a href="assets/GavinLOlson_Resume_2026.pdf" target="_blank" rel="noreferrer">Resume (PDF)</a>
+          </div>
+        </div>
+
+        <div class="hero__card">
+          <div class="avatar" aria-hidden="true"></div>
+          <ul class="quickfacts">
+            <li><strong>Location:</strong> DC Area (Open to relocation)</li>
+            <li><strong>Focus:</strong> Parallel + distributed, performance</li>
+            <li><strong>Currently:</strong> Shipping projects + applying</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- PROJECTS -->
+      <section class="section" id="projects">
+        <div class="section__head container">
+          <h2>Projects</h2>
+          <p>Here are a few of my projects. I've been using AI to enhance my development workflow.</p>
+          <div class="carousel__nav">
+            <button class="carousel__btn" id="carouselPrev" aria-label="Previous project">&#8592;</button>
+            <button class="carousel__btn" id="carouselNext" aria-label="Next project">&#8594;</button>
+          </div>
+        </div>
+
+        <div class="carousel">
+          <article class="card">
+            <div class="card__top">
+              <h3>QuEST Contributions</h3>
+              <p class="muted">C • OpenMP • MPI • CUDA</p>
+            </div>
+            <p>
+              Contributed to parallel initialization and validation logic in the QuEST
+              quantum simulation toolkit, collaborating directly with core maintainers
+              on performance and correctness improvements.
+            </p>
+            <ul class="bullets">
+              <li>Worked on MPI, CUDA, and OpenMP initialization paths</li>
+              <li>Assisted with validation utilities and performance analysis</li>
+              <li>Received direct feedback and acknowledgment from the lead maintainer</li>
+            </ul>
+            <div class="card__actions">
+              <a class="btn btn--small" href="https://github.com/QuEST-Kit/QuEST" target="_blank" rel="noreferrer">GitHub Repo</a>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="card__top">
+              <h3>Large-Scale Playwright Scraper</h3>
+              <p class="muted">Python • Playwright • Pandas • PostgreSQL</p>
+            </div>
+            <p>
+              Built a headless browser scraping pipeline for a private client to aggregate and analyze structured data
+              across thousands of dynamic pages, handling auth flows, pagination, and anti-bot countermeasures automatically.
+            </p>
+            <ul class="bullets">
+              <li>Scraped and structured 50,000+ records with 99% field-level accuracy validated against source</li>
+              <li>Reduced client's manual data entry workload by an estimated 120+ hours</li>
+              <li>Automated nightly runs with delta detection to capture only new or changed entries</li>
+            </ul>
+            <div class="card__actions">
+              <span class="btn btn--small btn--ghost" aria-disabled="true">Client Declined Open Source</span>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="card__top">
+              <h3>Private Doc Brain</h3>
+              <p class="muted">Python • Ollama • ChromaDB • BM25</p>
+            </div>
+            <p>
+              A fully local, privacy-first document Q&A system. Ask natural language questions across PDFs, Word docs,
+              emails, and text files — LLM inference and vector storage run entirely on-device, no data ever leaves the machine.
+            </p>
+            <ul class="bullets">
+              <li>Hybrid retrieval combining BM25 keyword search and semantic vector search via Reciprocal Rank Fusion</li>
+              <li>HyDE mode — LLM generates a hypothetical answer first to improve semantic chunk matching</li>
+              <li>SHA256-based incremental indexing; only new or modified files are re-embedded on subsequent runs</li>
+            </ul>
+            <div class="card__actions">
+              <a class="btn btn--small" href="https://github.com/olsongl/Doc-Brain" target="_blank" rel="noreferrer">GitHub Repo</a>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="card__top">
+              <h3>AI Job Auto-Applicator</h3>
+              <p class="muted">Python • Selenium • AI • Browser Automation</p>
+            </div>
+            <p>
+              An intelligent job application bot that automates the repetitive parts of applying at scale. Users pre-fill
+              a profile once; the system handles the rest — navigating job boards, filling forms, and using AI to adapt
+              answers to each posting's specific questions.
+            </p>
+            <ul class="bullets">
+              <li>Selenium-driven form automation with hardcoded site-specific logic for major job platforms</li>
+              <li>AI-generated responses for free-text fields tailored to each job description</li>
+              <li>User-defined profile keeps humans in control of core info while the bot handles execution</li>
+            </ul>
+            <div class="card__actions">
+              <span class="btn btn--small btn--ghost" aria-disabled="true">Open Source Soon</span>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- SKILLS -->
+      <section class="section container" id="skills">
+        <div class="section__head">
+          <h2>Skills</h2>
+          <p>Tools and technologies I've used and/or are comfortable working with.</p>
+        </div>
+
+        <div class="chips">
+          <span class="chip">C / C++</span>
+          <span class="chip">Python</span>
+          <span class="chip">Ruby</span>
+          <span class="chip">JavaScript</span>
+          <span class="chip">MySQL</span>
+          <span class="chip">OpenMP</span>
+          <span class="chip">MPI</span>
+          <span class="chip">CUDA</span>
+          <span class="chip">Kubernetes</span>
+          <span class="chip">Dask</span>
+          <span class="chip">Django</span>
+          <span class="chip">Linux</span>
+          <span class="chip">Git</span>
+          <span class="chip">LLM Integration</span>
+          <span class="chip">Prompt Engineering</span>
+          <span class="chip">Ollama</span>
+          <span class="chip">ChromaDB</span>
+          <span class="chip">RAG</span>
+          <span class="chip">Vector Search</span>
+          <span class="chip">Playwright</span>
+          <span class="chip">Selenium</span>
+          <span class="chip">AI Workflow Automation</span>
+          <span class="chip">Claude API</span>
+          <span class="chip">OpenAI API</span>
+          <span class="chip">LangChain</span>
+          <span class="chip">Agentic Pipelines</span>
+        </div>
+      </section>
+
+      <!-- ABOUT -->
+      <section class="section container" id="about">
+        <div class="section__head">
+          <h2>About</h2>
+        </div>
+
+        <div class="about">
+          <p>
+            I’m a software engineer with a strong analytical foundation. I enjoy working on performance-heavy problems,
+            parallel/distributed systems, and clean implementations that hold up under real constraints. I learn fast,
+            iterate based on feedback, and like shipping work that’s measurable.
+          </p>
+
+          <div class="callout">
+            <h3>What I’m looking for</h3>
+            <p class="muted">
+              Entry-level / new grad roles in software engineering, backend, HPC, or performance-focused engineering.
+            </p>
+            <p class="muted" style="margin-top: 10px;">
+              Also interested in AI integration roles — operations automation, internal tooling powered by LLMs,
+              workflow automation, and anything involving wiring AI into real systems to cut manual work and move faster.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      
+    </main>
+
+    <footer class="footer container">
+    <p class="muted small">© <span id="year"></span> Gavin Olson. Built with HTML/CSS/JS.</p>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
