@@ -88,7 +88,7 @@
           <div class="avatar" aria-hidden="true"></div>
           <ul class="quickfacts">
             <li><strong>Location</strong> DC Area (Open to relocation)</li>
-            <li><strong>Currently</strong> Shipping projects + applying</li>
+            <li><strong>Currently</strong> Building Broke &amp; Buzzed, InkFindr &amp; Sitely</li>
           </ul>
         </div>
       </section>
@@ -113,6 +113,147 @@
         </div>
 
         <div class="carousel">
+          <article class="card">
+            <div class="card__top">
+              <h3>Broke &amp; Buzzed — iOS App</h3>
+              <p class="muted">Swift · SwiftUI · SwiftData · MapKit</p>
+            </div>
+            <p>
+              A native SwiftUI app for a 21+ alcohol deal-discovery platform I founded — find the best
+              deals at licensed liquor stores and bars nearby, redeem them in-store via QR code, and earn
+              Buzz Points. ~12,400 lines of Swift across 94 files, submission-ready for the App Store.
+            </p>
+            <ul class="bullets">
+              <li>Actor-based networking client serializes token refresh so concurrent 401s can never race parallel refresh calls</li>
+              <li>QR redemption flow survives cold starts — SwiftData persistence resumes a live code within its 5-minute window</li>
+              <li>Custom retro-arcade design system with Reduce Motion / Reduce Transparency fallbacks, full Dynamic Type, and 70 passing unit tests</li>
+            </ul>
+            <div class="card__actions">
+              <a class="btn btn--small btn--ghost" href="https://thebrokeandbuzzed.com" target="_blank" rel="noreferrer">Visit the platform</a>
+              <span class="badge" aria-disabled="true">App Store launch in progress</span>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="card__top">
+              <h3>Broke &amp; Buzzed — Platform</h3>
+              <p class="muted">TypeScript · Express · Prisma · PostGIS · React</p>
+            </div>
+            <p>
+              The production backend and dashboards behind Broke &amp; Buzzed — REST API, admin and
+              store-owner dashboards, and marketing site, self-hosted on EC2 behind nginx and live at
+              thebrokeandbuzzed.com.
+            </p>
+            <ul class="bullets">
+              <li>Deal ranking blends savings %, recency decay, PostGIS distance decay, and engagement signals server-side</li>
+              <li>Buzz Points run through a double-entry ledger with a single service chokepoint, so transactions and cached balances can never drift</li>
+              <li>Store owners confirm redemptions by scanning customer QR codes with a live in-browser camera, backed by a 100&nbsp;m server-side geofence</li>
+            </ul>
+            <div class="card__actions">
+              <a class="btn btn--small btn--ghost" href="https://thebrokeandbuzzed.com" target="_blank" rel="noreferrer">Visit site</a>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="card__top">
+              <h3>InkFindr</h3>
+              <p class="muted">Next.js · React · Drizzle · PostgreSQL · AWS</p>
+            </div>
+            <p>
+              A style-first tattoo-artist discovery marketplace — search 750+ artists across all 50 states
+              by style, keyword, price, and distance, save boards, and send structured inquiries. Solo-built
+              and deployed end-to-end on AWS (EC2, RDS, S3, CloudFront, Lambda).
+            </p>
+            <ul class="bullets">
+              <li>Search fuses pg_trgm trigram similarity over GIN indexes with a hand-rolled Haversine distance sort in SQL</li>
+              <li>Portfolio uploads go direct-to-S3 via presigned POST; a Lambda post-processor strips EXIF/GPS and resizes with sharp</li>
+              <li>18-table schema, 34 API routes, moderation/report/claim flows, and dual IP + email keyed rate limiting</li>
+            </ul>
+            <div class="card__actions">
+              <a class="btn btn--small btn--ghost" href="https://inkfindr.com" target="_blank" rel="noreferrer">Visit inkfindr.com</a>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="card__top">
+              <h3>InkFindr — iOS App</h3>
+              <p class="muted">React Native · Expo · TypeScript</p>
+            </div>
+            <p>
+              The native iOS client for InkFindr — an Expo Router app with location-aware search, a
+              server-shuffled discovery feed, boards, and inquiries, fully prepped for App Store
+              submission.
+            </p>
+            <ul class="bullets">
+              <li>Fully typed API layer normalizes two different Zod error shapes into per-field form errors and honors Retry-After on 429s</li>
+              <li>90-day mobile JWTs issued by a purpose-built auth endpoint, stored in the Keychain via expo-secure-store</li>
+              <li>Complete iOS privacy manifest with per-API reason codes — zero tracking, analytics, or ad SDKs</li>
+            </ul>
+            <div class="card__actions">
+              <span class="badge" aria-disabled="true">App Store launch in progress</span>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="card__top">
+              <h3>Sitely</h3>
+              <p class="muted">HTML/CSS · S3 · CloudFront · Supabase</p>
+            </div>
+            <p>
+              A web studio I run that designs, builds, and hosts fast zero-build static sites for local
+              service businesses — client sites live on their own domains, ~20 pitch demos, and an
+              in-house CRM.
+            </p>
+            <ul class="bullets">
+              <li>Live client sites include villalobosconcreto.com, turnkeycleanup.com, and pokiesconcrete.com</li>
+              <li>One idempotent script provisions each domain: private S3 + CloudFront with OAC, ACM cert, and an apex→www edge redirect</li>
+              <li>Every site ships JSON-LD structured data, sitemap/robots, and a branded og:image share card rendered via headless Chrome</li>
+            </ul>
+            <div class="card__actions">
+              <a class="btn btn--small btn--ghost" href="https://www.sitelyweb.com" target="_blank" rel="noreferrer">Visit sitelyweb.com</a>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="card__top">
+              <h3>Dealer Suite</h3>
+              <p class="muted">Next.js · TypeScript · SST · AWS Lambda</p>
+            </div>
+            <p>
+              A full mock dealership platform — storefront, inventory, and CRM — with three swappable
+              industry templates that re-skin branding, fields, and data. Built as Sitely's flagship demo
+              and deployed serverless via SST/OpenNext to Lambda + CloudFront.
+            </p>
+            <ul class="bullets">
+              <li>Real dealer math: 12% Federal Excise Tax on qualifying heavy trucks, per-state doc-fee caps, and odometer-disclosure rules</li>
+              <li>VIN-decode intake via the NHTSA vPIC API pre-fills year, make, model, GVWR class, and engine</li>
+              <li>Printable FTC Buyers Guide in English and Spanish; JSON store with per-file async mutex behind a swappable Supabase driver</li>
+            </ul>
+            <div class="card__actions">
+              <a class="btn btn--small btn--ghost" href="https://demo.sitelyweb.com" target="_blank" rel="noreferrer">View live demo</a>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="card__top">
+              <h3>University Schedule Scraper Suite</h3>
+              <p class="muted">Python · Playwright · BeautifulSoup · OpenPyXL</p>
+            </div>
+            <p>
+              Thirteen schedule-of-classes scrapers (~10,000 lines) built for a private client, each
+              reverse-engineered per university and normalized through one shared engine so every school
+              emits an identical three-sheet Excel workbook.
+            </p>
+            <ul class="bullets">
+              <li>Playwright bootstraps a Microsoft Entra token for Texas A&amp;M's gated API; Penn State is driven through PeopleSoft ICSID/CSRF postbacks</li>
+              <li>Shared 600-line output engine reduces each school to a normalized course dict — byte-identical workbook shape across all 13</li>
+              <li>Documented trust boundary per field — scraped vs. computed vs. constant; missing data renders TBA, nothing is invented</li>
+            </ul>
+            <div class="card__actions">
+              <span class="badge" aria-disabled="true">Private client work</span>
+            </div>
+          </article>
+
           <article class="card">
             <div class="card__top">
               <h3>QuEST Contributions</h3>
@@ -369,6 +510,8 @@
               <div class="chips">
                 <span class="chip">C / C++</span>
                 <span class="chip">Python</span>
+                <span class="chip">Swift</span>
+                <span class="chip">TypeScript</span>
                 <span class="chip">Ruby</span>
                 <span class="chip">JavaScript</span>
                 <span class="chip">SQL</span>
@@ -419,6 +562,13 @@
               <div class="chips">
                 <span class="chip">Linux</span>
                 <span class="chip">Git</span>
+                <span class="chip">AWS (EC2 · S3 · CloudFront · Lambda)</span>
+                <span class="chip">Next.js / React</span>
+                <span class="chip">Node / Express</span>
+                <span class="chip">SwiftUI</span>
+                <span class="chip">Expo / React Native</span>
+                <span class="chip">PostgreSQL / PostGIS</span>
+                <span class="chip">Supabase</span>
                 <span class="chip">Django</span>
                 <span class="chip">MySQL</span>
                 <span class="chip">Playwright</span>
